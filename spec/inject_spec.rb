@@ -6,17 +6,22 @@ describe Array do
 	
 
 	it 'should be in a class of Array type ' do
-		expect(Array.instance_methods.include?(:injectnew)).to be_true
+		expect(Array.instance_methods.include?(:anathinject)).to be_true
 	end
 
 	it 'should be able to add the values of an array' do
-		expect(array.injectnew).to be_true
+		expect(array.anathinject).to be_true
 		end
 
 
-	it 'should multiply the values of the array by 5' do
+	it 'should multiply each element by the result of multiplying the previous two elements' do
 		array = [2,4,9]
-		expect(array.injectnew {|v| v * 5 }).to eq([10,20,45])
+		expect(array.anathinject {|result, element| result * element}).to eq(72)
+	end
+
+	it 'should sum all the integers in the array' do
+		array = [2,4,9]
+		expect(array.anathinject {|result, element| result + element }).to eq(15)
 	end
 
 	

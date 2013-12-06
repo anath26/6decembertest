@@ -1,12 +1,12 @@
 class Array
 
-	def injectnew
-		result = [] 
-		self.length.times do |i|
-			result << yield(self[i])
+def anathinject
+	result = self.first
+      self.each_with_index do |val , index| 
+        return result if index+1 == self.count 
+         result = yield result,self[index+1] 
 		end
-		result
 	end
 end
 
- puts [2,4,9].injectnew { |v| v * 5 }
+ puts [2,4,9].anathinject { |v| v * 5 }
