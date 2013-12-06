@@ -9,4 +9,4 @@ class Array
 	end
 end
 
- [2,4,9].map { |v| puts v * 5 }
+ puts [2,4,9].map { |v| v * 5 }
