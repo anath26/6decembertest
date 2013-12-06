@@ -1,6 +1,6 @@
 class Array
 
-	def map
+	def injectnew
 		result = [] 
 		self.length.times do |i|
 			result << yield(self[i])
@@ -9,4 +9,4 @@ class Array
 	end
 end
 
- puts [2,4,9].map { |v| v * 5 }
+ puts [2,4,9].injectnew { |v| v * 5 }
